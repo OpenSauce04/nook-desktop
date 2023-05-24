@@ -47,6 +47,8 @@ modules:
         npm run dist -- $ELECTRON_BUILDER_ARCH_ARGS  --linux --dir
       # Bundle app and dependencies
       - cp -a dist/linux*unpacked /app/main
+      # Copy tray icon
+      - cp icons/nookTray.png /app/main/resources
       # Export app icon
       - install -Dm644 icons/nook.png /app/share/icons/hicolor/512x512/apps/com.mn6.nookdesktop.png
       # Export desktop file
@@ -60,10 +62,6 @@ modules:
       - type: dir
         path: ..
         dest: main
-
-      - type: file
-        path: ../icons/nookTray.png
-        dest: main/icons
 
       - type: file
         path: nook-desktop.desktop
