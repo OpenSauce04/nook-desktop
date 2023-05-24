@@ -16,9 +16,7 @@ const fs = require('fs')
 
 const userSettingsPath = path.join(app.getPath('userData'), 'userSettings') // change path for userSettings
 storage.setDataPath(userSettingsPath)
-const assets = app.isPackaged
-  ? path.join(process.resourcesPath, '/build/icons/')
-  : path.join(__dirname, '/build/icons/')
+const assets = path.join(process.resourcesPath, '/icons/')
 
 const { autoUpdater } = require('electron-updater')
 
@@ -67,12 +65,9 @@ const createWindow = () => {
     win.setSkipTaskbar(true)
     win.hide()
 
-    const macTrayImage = 'nookTemplate.png'
     const trayImage = 'nookTray.png'
     const trayIcon =
-      os.platform() === 'darwin'
-        ? nativeImage.createFromPath(path.join(assets, macTrayImage))
-        : nativeImage.createFromPath(path.join(assets, trayImage))
+    nativeImage.createFromPath(path.join(assets, trayImage))
     const trayMenu = Menu.buildFromTemplate([
       {
         label: 'Exit',
