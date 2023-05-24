@@ -27,7 +27,9 @@ build-options:
   env:
     NPM_CONFIG_LOGLEVEL: info
 
+
 modules:
+
   - name: nook-desktop
     buildsystem: simple
     build-options:
@@ -35,6 +37,7 @@ modules:
         XDG_CACHE_HOME: /run/build/nook-desktop/flatpak-node/cache
         npm_config_cache: /run/build/nook-desktop/flatpak-node/npm-cache
         npm_config_offline: 'true'
+
     build-commands:
       # Install npm dependencies
       - npm install --offline
@@ -51,14 +54,23 @@ modules:
       # Install app wrapper
       - install -Dm755 -t /app/bin/ ../run.sh
     subdir: main
+
     sources:
+
       - type: dir
         path: ..
         dest: main
+
       - type: file
         path: ../icons/nookTray.png
         dest: main/icons
+
+      - type: file
+        path: nook-desktop.desktop
+        dest: main
+
       - generated-sources.json
+
       # Wrapper to launch the app
       - type: script
         dest-filename: run.sh
