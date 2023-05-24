@@ -1,4 +1,3 @@
-const request = require('superagent')
 const ipc = require('electron').ipcRenderer
 const $ = window.jQuery
 const Nanobar = window.Nanobar
@@ -7,7 +6,6 @@ const confirm = window.confirm
 let i18n
 let blinkers
 let paused = false
-let language = 'en'
 
 // Load translations here
 const translations = {
@@ -320,7 +318,6 @@ const pause = (state) => {
 }
 
 const changeLang = (lang, manual, arg) => {
-  language = lang
   i18n = key => {
     let t = translations[lang][key]
     if (!t) {
@@ -399,7 +396,6 @@ const showChangelog = () => {
 }
 
 const exec = () => {
-
   $('#close').on('click', () => {
     ipc.send('min')
   })

@@ -9,7 +9,6 @@ const {
   powerMonitor
 } = require('electron')
 
-const os = require('os')
 const storage = require('electron-json-storage')
 const path = require('path')
 const fs = require('fs')
