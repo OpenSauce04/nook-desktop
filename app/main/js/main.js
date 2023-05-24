@@ -1,11 +1,9 @@
 const request = require('superagent')
-const uuid = require('uuid')
 const ipc = require('electron').ipcRenderer
 const $ = window.jQuery
 const Nanobar = window.Nanobar
 const CustomEvent = window.CustomEvent
 const confirm = window.confirm
-const u = uuid.v4()
 let i18n
 let blinkers
 let paused = false
@@ -400,38 +398,7 @@ const showChangelog = () => {
   $('#changelog').click()
 }
 
-const logVis = (page) => {
-  request
-    .post('https://www.google-analytics.com/mp/collect')
-    .query({
-      api_secret: 'V8GvDmXcQmWaAM6HGa0nDg',
-      measurement_id: 'G-3Y8P169K9E'
-    })
-    .send(JSON.stringify({
-      client_id: u,
-      user_properties: {
-        language: {
-          value: language
-        }
-      },
-      events: [
-        {
-          name: 'page_view',
-          params: {
-            page_title: page,
-            page_location: `https://mat.dog/nook/${page}`,
-            engagement_time_msec: '5',
-            session_id: u
-          }
-        }
-      ]
-    }))
-    .then(() => {})
-    .catch(() => {})
-}
-
 const exec = () => {
-  logVis('home')
 
   $('#close').on('click', () => {
     ipc.send('min')
@@ -449,18 +416,14 @@ const exec = () => {
   })
 
   $('.patreon #supportme').on('click', (e) => {
-    logVis('patreonLink')
     ipc.send('patreon')
   })
 
   $('.title #openGithub').on('click', (e) => {
-    logVis('github')
     ipc.send('github')
   })
 
   $('#patreon').on('click', () => {
-    logVis('patreon')
-
     $('.page').addClass('hidden')
     $('.patreon.page').removeClass('hidden')
 
@@ -469,8 +432,6 @@ const exec = () => {
   })
 
   $('#changelog').on('click', () => {
-    logVis('changelog')
-
     $('.page').addClass('hidden')
     $('.changelog.page').removeClass('hidden')
 
@@ -479,7 +440,6 @@ const exec = () => {
   })
 
   $('#towntune_customize').on('click', () => {
-    logVis('towntune')
     $('.page').addClass('hidden')
     $('.tune-settings.page').removeClass('hidden')
 
@@ -488,7 +448,6 @@ const exec = () => {
   })
 
   $('#kkCustomize').on('click', () => {
-    logVis('kkCustomize')
     $('.page').addClass('hidden')
     $('.kk-customize.page').removeClass('hidden')
 
@@ -509,7 +468,6 @@ const exec = () => {
   })
 
   $('#settings').on('click', () => {
-    logVis('settings')
     $('.page').addClass('hidden')
     $('.settings.page').removeClass('hidden')
 
@@ -518,7 +476,6 @@ const exec = () => {
   })
 
   $('#home').on('click', () => {
-    logVis('home')
     $('.page').addClass('hidden')
     $('.home.page').removeClass('hidden')
 

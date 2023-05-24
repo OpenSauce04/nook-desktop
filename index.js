@@ -18,8 +18,6 @@ const userSettingsPath = path.join(app.getPath('userData'), 'userSettings') // c
 storage.setDataPath(userSettingsPath)
 const assets = path.join(process.resourcesPath, '/icons/')
 
-const { autoUpdater } = require('electron-updater')
-
 const progress = (win, num) => {
   win.webContents.send('toWindow', ['bar', num])
 }
@@ -170,7 +168,3 @@ else {
     myWindow = createWindow()
   })
 }
-
-autoUpdater.logger = require('electron-log')
-autoUpdater.logger.transports.file.level = 'info'
-autoUpdater.checkForUpdatesAndNotify()
