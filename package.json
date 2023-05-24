@@ -23,7 +23,8 @@
   "standard": {
     "ignore": [
       "howler.min.js",
-      "wad.js"
+      "wad.js",
+      "flatpak/*"
     ]
   }
 }
