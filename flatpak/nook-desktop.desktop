@@ -2,5 +2,5 @@
 Name=Nook
 Exec=
 Type=Application
-Icon=com.mn6.nookdesktop
+Icon=camp.nook.nookdesktop
 Categories=Audio;Music;Player;AudioVideo;

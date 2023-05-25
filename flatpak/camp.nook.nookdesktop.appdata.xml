@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <component type="desktop-application">
-  <id>com.mn6.nookdesktop</id>
+  <id>camp.nook.nookdesktop</id>
   <name>Nook Desktop</name>
   <project_license>ISC</project_license>
   <metadata_license>CC0-1.0</metadata_license>
   <provides>
-    <id>com.mn6.nookdesktop</id>
+    <id>camp.nook.nookdesktop</id>
   </provides>
   <summary>Nook is an application that plays Animal Crossing hourly themes on the hour.</summary>
   <description>
