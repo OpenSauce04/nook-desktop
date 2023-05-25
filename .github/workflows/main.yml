@@ -11,12 +11,10 @@ jobs:
   build:
 
     runs-on: windows-latest
-    env:
-      GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
 
     strategy:
       matrix:
-        node-version: [18.12.1]
+        node-version: [18.16.0]
 
     steps:
       - uses: actions/checkout@v3
@@ -24,6 +22,5 @@ jobs:
         uses: actions/setup-node@v3
         with:
           node-version: ${{ matrix.node-version }}
-      - run: echo GH_TOKEN=${{ secrets.GITHUB_TOKEN }} > .env
       - run: npm ci
       - run: npm run lint
