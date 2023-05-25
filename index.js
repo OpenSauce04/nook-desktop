@@ -32,7 +32,7 @@ const createWindow = () => {
     transparent: true,
     frame: false,
     resizable: false,
-    icon: './icons/nook.png',
+    icon: path.join(assets, 'nook.png'),
     webPreferences: {
       backgroundThrottling: false,
       nodeIntegration: true,
@@ -62,9 +62,7 @@ const createWindow = () => {
     win.setSkipTaskbar(true)
     win.hide()
 
-    const trayImage = 'nookTray.png'
-    const trayIcon =
-    nativeImage.createFromPath(path.join(assets, trayImage))
+    const trayIcon = nativeImage.createFromPath(path.join(assets, 'nookTray.png'))
     const trayMenu = Menu.buildFromTemplate([
       {
         label: 'Exit',
