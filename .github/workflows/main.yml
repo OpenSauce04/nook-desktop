@@ -2,9 +2,9 @@ name: Node.js CI
 
 on:
   push:
-    branches: [ main ]
+    branches: [ flatpak ]
   pull_request:
-    branches: [ main ]
+    branches: [ flatpak ]
   workflow_dispatch:
 
 jobs:
