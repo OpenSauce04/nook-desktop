@@ -10,7 +10,7 @@
   <summary>Nook is an application that plays Animal Crossing hourly themes on the hour.</summary>
   <description>
     <p>Nook used to be a browser extension, however with the changes bought in Chrome Manifest v3, it was decided that the browser extension was too difficult to maintain, and Nook was repurposed into a desktop app.</p>
-    <p/>
+
     <p>Features over the browser version include:</p>
     <ul>
       <li>New slick interface</li>
