@@ -34,7 +34,15 @@
     </screenshot>
   </screenshots>
   <releases>
+
+    <release version="1.0.9-f2" date="2023-06-05">
+      <description>
+        <p>- When running on the Gnome desktop environment, the minimize to tray button is no longer visible</p>
+      </description>
+    </release>
+
     <release version="1.0.9-f1" date="2023-05-25"/>
+
   </releases>
   <keywords>
     <keyword>nook</keyword>
