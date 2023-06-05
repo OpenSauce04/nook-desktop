@@ -1,4 +1,5 @@
 const ipc = require('electron').ipcRenderer
+const execSync = require('child_process').execSync
 const $ = window.jQuery
 const Nanobar = window.Nanobar
 const CustomEvent = window.CustomEvent
@@ -68,6 +69,15 @@ const tunes = [
 
 let nanobar
 
+const isGnome = (function () {
+  const stdout = String.fromCharCode.apply(null, execSync("echo $XDG_CURRENT_DESKTOP"))
+  return stdout.includes("GNOME")
+})()
+
+const minimizeString = !isGnome
+                       ? '<button id="close" data-i18n-title="Minimize to tray"></button>'
+                       : ''
+
 const template = `
 <div class="container overlay">
   <div class="error"><div></div></div>
@@ -78,7 +88,7 @@ const template = `
           <button id="pause" data-i18n-title="Pause" data-i18n-title-alt="Play"></button>
       </span>
       <div class="buttonbox">
-          <button id="close" data-i18n-title="Minimize to tray"></button>
+          ${minimizeString}
           <button id="exit" data-i18n-title="Exit Nook"></button>
       </div>
   </div>
