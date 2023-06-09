@@ -160,7 +160,7 @@ const template = `
             <span data-i18n="Play K.K. music on Saturday nights"></span>
           </label>
           <label>
-              <input id="openOnStartup" type="checkbox"/>
+              <input id="openOnStartup" type="checkbox" onclick="return false;" disabled="disabled"/>
               <span data-i18n="Open on startup"></span>
           </label>
           <div class="btnContainer">
@@ -340,6 +340,7 @@ const setCooldown = () => {
   $('.settings').find('input, button, select').attr('disabled', true)
   setTimeout(() => {
     $('.settings').find('input, button, select').removeAttr('disabled')
+    $('.settings').find('#openOnStartup').attr('disabled', true)
   }, 300)
 }
 
