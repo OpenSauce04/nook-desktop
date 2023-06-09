@@ -35,6 +35,17 @@
   </screenshots>
   <releases>
 
+    <release version="1.0.10-f1" date="2023-06-10">
+      <description>
+        <p>- Fixed New Leaf 9am and 5pm loops
+        - Added Population Growing - Rainy Day, will always play the same tune
+        - Added label when minimized to tray to view the current tune's game and name
+        - Fixed total download file count
+        - Added Italian translations (thanks albanobattistella!)
+        - Minor bug fixes</p>
+      </description>
+    </release>
+
     <release version="1.0.9-f2" date="2023-06-05">
       <description>
         <p>- When running on the Gnome desktop environment, the minimize to tray button is no longer visible</p>
