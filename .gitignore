@@ -2,3 +2,4 @@ node_modules
 dist
 .env
 .flatpak-builder
+.DS_Store
